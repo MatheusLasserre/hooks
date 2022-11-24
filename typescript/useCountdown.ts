@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function useCountdown() {
+const useCountdown = () => {
 
     var countDownDate = new Date("Dec 02, 2022 23:59:59").getTime();
 
@@ -38,7 +38,7 @@ export default function useCountdown() {
     };
 
 
-    const reset = () => setTime([parseInt(hours), parseInt(minutes), parseInt(seconds)]);
+    const reset = () => setTime([hours, minutes, seconds]);
 
     
     React.useEffect(() => {
@@ -55,3 +55,4 @@ export default function useCountdown() {
     }
 }
 
+export default useCountdown

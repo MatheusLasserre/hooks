@@ -4,7 +4,6 @@ export default function useCountdown() {
 
     var countDownDate = new Date("Dec 02, 2022 23:59:59").getTime();
 
-
     var now = new Date().getTime();
 
     var distance = countDownDate - now;
@@ -15,14 +14,7 @@ export default function useCountdown() {
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
 
-
     const [[hrs, mins, secs], setTime] = React.useState([hours, minutes, seconds]);
-    
-    const   [totalHours, setTotalHours] = React.useState((hours + days*24));
-
-    // console.log('Days', days);
-    // console.log('Hours', hours);
-    // console.log('totalHours', Math.floor(days * hours))
 
     const tick = () => {
    
@@ -46,12 +38,8 @@ export default function useCountdown() {
         return () => clearInterval(timerId);
     });
 
-    React.useEffect(() => {
-        setTotalHours((hrs + days*24));
-    },[hrs])
-
     return {
-        days, hrs, mins, secs, totalHours
+        days, hrs, mins, secs
     }
 }
 
