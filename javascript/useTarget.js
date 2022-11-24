@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 
 export default function useTarget(initialIsTarget) {
+
     const [isTarget, setIsTarget] = useState(initialIsTarget);
+    
     const ref = useRef(null);
 
     const handleClickOutside = (event) => {
