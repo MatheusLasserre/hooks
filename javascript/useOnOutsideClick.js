@@ -19,3 +19,5 @@ export const useOnOutsideClick = (trigger) => {
 
   return ref
 }
+
+export default useOnOutsideClick
