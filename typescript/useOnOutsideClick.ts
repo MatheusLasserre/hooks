@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react'
 
-export const callOnOutsideClick = (trigger) => {
+export const useOnOutsideClick = (trigger: () => void) => {
   const ref = useRef(null)
 
-  const handleClickOutside = (event) => {
+  const handleClickOutside = (event: Event) => {
     // @ts-expect-error - TS complains about ref.current being null, but it's just to prevent a React bug
     if (ref.current && !ref.current.contains(event.target)) {
       trigger()
